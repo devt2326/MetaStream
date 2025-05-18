@@ -1,0 +1,10 @@
+version: '3'
+services:
+  spark:
+    image: jupyter/pyspark-notebook:latest
+    ports:
+      - "8888:8888"         # JupyterLab
+    volumes:
+      - ./:/home/jovyan/work
+    environment:
+      - SPARK_OPTS=--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0
